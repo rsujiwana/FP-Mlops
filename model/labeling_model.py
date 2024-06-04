@@ -1,15 +1,29 @@
-from pyabsa import ABSADatasetList, APCModelList, Trainer
+from pyabsa import ABSADatasetList, APCModelList, available_checkpoints
+from pyabsa import AspectTermExtraction as ATEPC
 from pyabsa import ATEPCConfigManager
 
 config = ATEPCConfigManager.get_atepc_config_english()
 dataset = ABSADatasetList.SemEval
-sent_classifier = Trainer(config=config,
-                          dataset=dataset,
-                          model=APCModelList.FAST_LCF_ATEPC,
-                          save_checkpoint=True,
-                          auto_device=True)
+
+# checkpoint_map = available_checkpoints(
+#     TaskCodeOption.Aspect_Polarity_Classification, show_ckpts=True
+# )
+
+aspect_extractor = ATEPC.ATEPCTrainer(
+    config=config,
+    from_checkpoint='checkpints.json'   #checkpoint_map,   # not necessary for most situations
+    dataset=dataset,
+    checkpoint_save_mode=1,
+    auto_device=True,
+    load_aug=False,
+).load_trained_model()
 
 def label_text(text):
     # Implementasi pelabelan dengan model yang sudah dilatih
-    result = sent_classifier.infer(text)
+    result = aspect_extractor.batch_predict(
+        target_file=atepc_examples,  #
+        save_result=True,
+        print_result=True,  # print the result
+        pred_sentiment=True,  # Predict the sentiment of extracted aspect terms
+)
     return result
