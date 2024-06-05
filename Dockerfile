@@ -4,7 +4,8 @@ WORKDIR /app
 
 RUN apt-get update -y && \
     apt-get install --no-install-recommends build-essential -y && \
-    apt-get clean -y
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
     
 
 COPY requirements.txt ./
