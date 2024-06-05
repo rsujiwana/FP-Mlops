@@ -17,7 +17,7 @@ COPY . .
 
 RUN chmod 755 entrypoint.sh
 
-EXPOSE 8080
+EXPOSE 5000
 
 USER nobody
 ENTRYPOINT [ "./entrypoint.sh" ]
