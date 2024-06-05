@@ -11,7 +11,7 @@ RUN apk add --no-cache \
 
 COPY requirements.txt ./
 
-RUN python -m pip install --no-cache-dir --upgrade pip
+RUN python -m pip install --no-cache-dir --upgrade pip==24.0
 
 RUN python -m pip install --no-cache-dir uwsgi==2.0.26 && \
     python -m pip install --no-cache-dir -r requirements.txt
