@@ -4,7 +4,8 @@ WORKDIR /app
 
 RUN apk add --no-cache \
     make=4.4.1-r2 \
-    build-base=0.5-r3
+    gcc=13.2.1_git20220924-r10 \
+    musl-dev=1.2.5-r1
 
 
 COPY requirements.txt ./
