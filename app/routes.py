@@ -1,5 +1,5 @@
 from flask import request, jsonify, render_template, current_app as app
-from model.labeling_model import label_data
+from model.labeling_model import label_text
 
 @app.route('/')
 def index():
