@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     gcc=12.2.1_git20220924-r10 \
     linux-headers=6.3-r0 \
     musl-dev=1.2.4-r2 \
-    build-base
+    build-base=0.5-r3
 
 
 COPY requirements.txt ./
