@@ -5,6 +5,7 @@ WORKDIR /app
 RUN apk add --no-cache \
     make\
     gcc\
+    linux-headers \
     musl-dev
 
 
