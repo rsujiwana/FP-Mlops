@@ -1,5 +1,7 @@
-from flask import request, jsonify, render_template, current_app as app
+from flask import Flask, request, jsonify, render_template, current_app as app
 from model.labeling_model import label_text
+
+app = Flask(__name__)
 
 @app.route('/')
 def index():
@@ -10,3 +12,7 @@ def label_data_route():
     data = request.json['data']
     labeled_data = label_data(data)
     return jsonify(labeled_data)
+
+if __name__ == '__main__':
+    app.run()
+~                
