@@ -3,9 +3,9 @@ FROM python:3.8-alpine3.20
 WORKDIR /app
 
 RUN apk add --no-cache \
-    make=4.4.1-r2 \
-    gcc=13.2.1_git20220924-r10 \
-    musl-dev=1.2.5-r1
+    make\
+    gcc\
+    musl-dev
 
 
 COPY requirements.txt ./
