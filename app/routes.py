@@ -10,7 +10,7 @@ def index():
 @app.route('/label', methods=['POST'])
 def label_data_route():
     data = request.json['data']
-    labeled_data = label_data(data)
+    labeled_data = label_text(data)
     return jsonify(labeled_data)
 
 if __name__ == '__main__':
