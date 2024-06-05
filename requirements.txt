@@ -1,3 +1,4 @@
 Flask
-pyabsa
+pyabsa==2.4.1
+torch>=1.0.0
 pytest
