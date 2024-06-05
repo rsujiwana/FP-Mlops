@@ -1,13 +1,11 @@
-FROM python:3.8-alpine3.20
+FROM 3.9.19-slim-bookworm
 
 WORKDIR /app
 
-RUN apk add --no-cache \
-    make\
-    gcc\
-    linux-headers \
-    musl-dev
-
+RUN apt-get update -y && \
+    apt-get install --no-install-recommends build-essential -y && \
+    apt-get clean -y
+    
 
 COPY requirements.txt ./
 
