@@ -12,7 +12,7 @@ dataset = ABSADatasetList.SemEval
 aspect_extractor = ATEPC.ATEPCTrainer(
     config=config,
     from_checkpoint='checkpoints.json'   #checkpoint_map,   # not necessary for most situations
-    dataset: dataset,
+    dataset: dataset,  # Corrected line
     checkpoint_save_mode=1,
     auto_device=True,
     load_aug=False,
