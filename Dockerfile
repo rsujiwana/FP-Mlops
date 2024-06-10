@@ -3,7 +3,7 @@ FROM python:3.9.19-slim-bookworm
 # disable suid and guid
 RUN find /usr/bin \( -perm /4000 -o -perm /2000 \) -type f -exec chmod a-s {} + || true   
 
-WORKDIR /app
+WORKDIR /fpmlops
 
 # install build-essential and git
 RUN apt-get update -y && \
