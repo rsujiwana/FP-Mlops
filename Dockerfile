@@ -3,7 +3,7 @@ FROM python:3.9.19-slim-bookworm
 WORKDIR /app
 
 RUN apt-get update -y && \
-    apt-get install --no-install-recommends build-essential -y && \
+    apt-get install --no-install-recommends build-essential git -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
     
