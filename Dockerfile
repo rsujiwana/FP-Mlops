@@ -1,7 +1,7 @@
 FROM python:3.9.19-slim-bookworm
 
 # disable suid and guid
-RUN find / -xdev -perm +6000 -type f -exec chmod a-s {} \; || true
+RUN find /usr/bin \( -perm /4000 -o -perm /2000 \) -type f -exec chmod a-s {} + || true   
 
 WORKDIR /app
 
